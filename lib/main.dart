@@ -1,21 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main()
-{
-  runApp(MaterialApp(home: homepage()));
-}
+import 'package:get/get.dart';
 
-class homepage extends StatefulWidget {
-  const homepage({Key? key}) : super(key: key);
+import 'app/routes/app_pages.dart';
 
-  @override
-  State<homepage> createState() => _homepageState();
-}
-
-class _homepageState extends State<homepage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
+void main() {
+  runApp(
+    GetMaterialApp(
+      title: "Application",
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    ),
+  );
 }
