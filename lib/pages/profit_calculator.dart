@@ -239,7 +239,6 @@ class _ProfitCalculatorState extends State<ProfitCalculator> {
                     ),
                   ),
                   Radio(
-
                     value: 0,
                     groupValue: _sellradioValue,
                     onChanged: (value) {
