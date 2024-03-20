@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:stock_calculator/app/modules/multi_stock_calculator/views/multi_stock_calculator_view.dart';
+import 'package:stock_calculator/app/modules/profit_calculator/views/profit_calculator_view.dart';
 import 'package:stock_calculator/pages/profit_calculator.dart';
+import 'package:stock_calculator/themes/app_them_data.dart';
 
-import 'homepage.dart';
-import 'loss_calculaot.dart';
-import 'multi_stock_calculator.dart';
+import '../app/modules/loss_calculaot/views/loss_calculaot_view.dart';
+import '../pages/homepage.dart';
+import '../pages/loss_calculaot.dart';
+import '../pages/multi_stock_calculator.dart';
 
 class drawer extends StatefulWidget {
   const drawer({Key? key}) : super(key: key);
@@ -14,7 +18,7 @@ class drawer extends StatefulWidget {
 }
 
 class _drawerState extends State<drawer> {
-  List page = [HomePage(),multi_stock_calculator(),ProfitCalculator(),loss_calculator()];
+  List page = [HomePage(),MultiStockCalculatorView(),ProfitCalculator(),LossCalculaotView()];
   int index = 0;
 
   String appbartitle = "";
@@ -29,20 +33,20 @@ class _drawerState extends State<drawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(  appBar: AppBar(
-      title: Text('$appbartitle'),
+      title: Text('$appbartitle',style: const TextStyle(fontFamily: AppThemData.bold)),
     ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.teal,
                 ),
                 child: Lottie.asset("lottie/Animation - 1710942560777.json")
               ),
               ListTile(
-                title: Text('Stock average calculor'),
+                title: const Text('Stock average calculor',style: TextStyle(fontFamily: AppThemData.bold),),
                 onTap: () {
                   setState(() {
                     index = 0;
@@ -52,7 +56,7 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
-                title: Text('Multi Stock calculator'),
+                title: Text('Multi Stock calculator',style: TextStyle(fontFamily: AppThemData.bold),),
                 onTap: () {
                   setState(() {
                     index = 1;
@@ -62,7 +66,7 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
-                title: Text('Profit calculator'),
+                title: Text('Profit calculator',style: TextStyle(fontFamily: AppThemData.bold),),
                 onTap: () {
                   setState(() {
                     index = 2;
@@ -72,7 +76,7 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
-                title: Text('Loss calculator'),
+                  title: Text('Loss calculator',style: TextStyle(fontFamily: AppThemData.bold),),
                 onTap: () {
                   setState(() {
                     index = 3;

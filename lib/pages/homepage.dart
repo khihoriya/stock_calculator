@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:stock_calculator/themes/app_colors.dart';
+import 'package:stock_calculator/themes/app_them_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,17 +19,16 @@ class _HomePageState extends State<HomePage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Text(
                     "Original share quantity",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -63,13 +64,13 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Text(
                     "Purchase price",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -105,13 +106,13 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Text(
                     "New Share Qty",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -147,13 +148,13 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Text(
                     "New Purchase Price",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -189,54 +190,54 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(12.0),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Average Price Per Share ",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                   Text(
                     "200rs",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                 ],
               ),
             ),
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(12.0),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Total Share ",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                   Text(
                     "200rs",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                 ],
               ),
             ),
 
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(12.0),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Total Cost ",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                   Text(
                     "200rs",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                   ),
 
                 ],
@@ -252,17 +253,17 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       height: screenHeight * 0.05,
                       width: screenWidth * 0.4,
-                      color: Colors.teal,
-                      child: Center(child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),
+                      color: AppColors.primary600,
+                      child: const Center(child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.white),)),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: Container(
                       height: screenHeight * 0.05,
                       width: screenWidth * 0.4,
-                      color: Colors.green,
-                      child: Center(child: Text("Reset",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),// Second new container color
+                      color: AppColors.green04,
+                      child: const Center(child: Text("Reset",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),// Second new container color
                     ),
                   ),
                 ],

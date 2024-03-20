@@ -23,6 +23,23 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  fonts:
+    - family: Figtree-Regular
+      fonts:
+        - asset: assets/fonts/Figtree-Regular.ttf
+
+    - family: Figtree-Medium
+      fonts:
+        - asset: assets/fonts/Figtree-Medium.ttf
+
+    - family: Figtree-Bold
+      fonts:
+        - asset: assets/fonts/Figtree-Bold.ttf
+
+    - family: Figtree-SemiBold
+      fonts:
+        - asset: assets/fonts/Figtree-SemiBold.ttf
   assets:
     - lottie/
+    - assets/fonts/
 
