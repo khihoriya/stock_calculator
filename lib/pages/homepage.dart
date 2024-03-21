@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +45,7 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.blueGrey,
                             borderRadius: BorderRadius.circular(10)),
                         child: TextField(
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               fillColor: Colors.white,
                               filled: true,
