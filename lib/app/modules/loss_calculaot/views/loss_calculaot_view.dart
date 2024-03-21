@@ -32,7 +32,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                           borderRadius: BorderRadius.circular(10)),
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: "Share Quantity",
+                          hintText: "Share Quantityyyy",
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
