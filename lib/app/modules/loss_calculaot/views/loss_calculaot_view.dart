@@ -174,10 +174,10 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
             padding: EdgeInsets.all(12.0),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "New Shares Qty ",
-                  style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
-                ),
+                // Text(
+                //   "New Shares Qty ",
+                //   style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+                // ),
           
                 Text(
                   "200rs",
