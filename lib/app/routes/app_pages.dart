@@ -10,6 +10,8 @@ import '../modules/multi_stock_calculator/bindings/multi_stock_calculator_bindin
 import '../modules/multi_stock_calculator/views/multi_stock_calculator_view.dart';
 import '../modules/profit_calculator/bindings/profit_calculator_binding.dart';
 import '../modules/profit_calculator/views/profit_calculator_view.dart';
+import '../modules/settings_screen/bindings/settings_screen_binding.dart';
+import '../modules/settings_screen/views/settings_screen_view.dart';
 
 part 'app_routes.dart';
 
@@ -38,6 +40,11 @@ class AppPages {
       name: _Paths.PROFIT_CALCULATOR,
       page: () => const ProfitCalculatorView(),
       binding: ProfitCalculatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTINGS_SCREEN,
+      page: () => const SettingsScreenView(),
+      binding: SettingsScreenBinding(),
     ),
   ];
 }

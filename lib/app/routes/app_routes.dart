@@ -7,6 +7,7 @@ abstract class Routes {
   static const LOSS_CALCULAOT = _Paths.LOSS_CALCULAOT;
   static const MULTI_STOCK_CALCULATOR = _Paths.MULTI_STOCK_CALCULATOR;
   static const PROFIT_CALCULATOR = _Paths.PROFIT_CALCULATOR;
+  static const SETTINGS_SCREEN = _Paths.SETTINGS_SCREEN;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const LOSS_CALCULAOT = '/loss-calculaot';
   static const MULTI_STOCK_CALCULATOR = '/multi-stock-calculator';
   static const PROFIT_CALCULATOR = '/profit-calculator';
+  static const SETTINGS_SCREEN = '/settings-screen';
 }

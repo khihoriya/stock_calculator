@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:stock_calculator/app/modules/multi_stock_calculator/views/multi_stock_calculator_view.dart';
 import 'package:stock_calculator/app/modules/profit_calculator/views/profit_calculator_view.dart';
+import 'package:stock_calculator/app/modules/settings_screen/views/settings_screen_view.dart';
 import 'package:stock_calculator/pages/profit_calculator.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
 
@@ -22,7 +24,8 @@ class _drawerState extends State<drawer> {
     HomePage(),
     MultiStockCalculatorView(),
     ProfitCalculator(),
-    LossCalculaotView()
+    LossCalculaotView(),
+    SettingsScreenView()
   ];
   int index = 0;
 
@@ -39,7 +42,7 @@ class _drawerState extends State<drawer> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.teal,
+          backgroundColor: Color(0xff024854),
           title: Text('$appbartitle',
               style: const TextStyle(fontFamily: AppThemData.bold,color: Colors.white),),
         ),
@@ -49,10 +52,14 @@ class _drawerState extends State<drawer> {
             children: <Widget>[
               DrawerHeader(
                   decoration: const BoxDecoration(
-                    color: Colors.teal,
+                    color: Color(0xff024854),
                   ),
                   child: Lottie.asset("lottie/Animation - 1710942560777.json")),
               ListTile(
+                leading: SvgPicture.asset(
+                  'assets/icons/stock1.svg',
+                  height: 26,
+                ),
                 title: const Text(
                   'Stock average calculor',
                   style: TextStyle(fontFamily: AppThemData.bold),
@@ -66,7 +73,11 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
-                title: Text(
+                leading: SvgPicture.asset(
+                  'assets/icons/ic_multipal_stock.svg',
+                  height: 26,
+                ),
+                title: const Text(
                   'Multi Stock calculator',
                   style: TextStyle(fontFamily: AppThemData.bold),
                 ),
@@ -79,6 +90,10 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
+                leading: SvgPicture.asset(
+                  'assets/icons/ic_profit.svg',
+                  height: 26,
+                ),
                 title: Text(
                   'Profit calculator',
                   style: TextStyle(fontFamily: AppThemData.bold),
@@ -92,6 +107,10 @@ class _drawerState extends State<drawer> {
                 },
               ),
               ListTile(
+                leading: SvgPicture.asset(
+                  'assets/icons/ic_loss.svg',
+                  height: 26,
+                ),
                 title: Text(
                   'Loss calculator',
                   style: TextStyle(fontFamily: AppThemData.bold),
@@ -100,6 +119,23 @@ class _drawerState extends State<drawer> {
                   setState(() {
                     index = 3;
                     appbartitle = "Loss Calculator";
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: SvgPicture.asset(
+                  'assets/icons/ic_setting.svg',
+                  height: 26,
+                ),
+                title: const Text(
+                  'settings',
+                  style: TextStyle(fontFamily: AppThemData.bold),
+                ),
+                onTap: () {
+                  setState(() {
+                    index = 4;
+                    appbartitle = "settings";
                   });
                   Navigator.pop(context);
                 },

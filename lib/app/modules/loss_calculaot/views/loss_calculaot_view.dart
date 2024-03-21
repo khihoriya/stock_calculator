@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../../../../themes/app_colors.dart';
 import '../../../../themes/app_them_data.dart';
 import '../controllers/loss_calculaot_controller.dart';
@@ -36,7 +34,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.cancel_sharp))),
@@ -66,7 +64,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.cancel_sharp))),
@@ -96,7 +94,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.cancel_sharp))),
@@ -126,7 +124,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.cancel_sharp))),
@@ -156,7 +154,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.cancel_sharp))),
