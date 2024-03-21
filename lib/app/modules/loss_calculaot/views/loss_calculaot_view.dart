@@ -175,7 +175,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "New Shares Qty ",
+                  "New Shares Qtyyyy ",
                   style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
                 ),
           
