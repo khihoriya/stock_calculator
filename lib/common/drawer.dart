@@ -23,7 +23,7 @@ class _drawerState extends State<drawer> {
   List page = [
     HomePage(),
     MultiStockCalculatorView(),
-    ProfitCalculator(),
+    ProfitCalculatorView(),
     LossCalculaotView(),
     SettingsScreenView()
   ];
@@ -42,6 +42,7 @@ class _drawerState extends State<drawer> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Color(0xff024854),
           title: Text('$appbartitle',
               style: const TextStyle(fontFamily: AppThemData.bold,color: Colors.white),),
@@ -112,13 +113,13 @@ class _drawerState extends State<drawer> {
                   height: 26,
                 ),
                 title: Text(
-                  'Loss calculator',
+                  'Loss Recover',
                   style: TextStyle(fontFamily: AppThemData.bold),
                 ),
                 onTap: () {
                   setState(() {
                     index = 3;
-                    appbartitle = "Loss Calculator";
+                    appbartitle = "Loss Recover";
                   });
                   Navigator.pop(context);
                 },

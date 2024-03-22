@@ -38,7 +38,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFIT_CALCULATOR,
-      page: () => const ProfitCalculatorView(),
+      page: () =>  ProfitCalculatorView(),
       binding: ProfitCalculatorBinding(),
     ),
     GetPage(

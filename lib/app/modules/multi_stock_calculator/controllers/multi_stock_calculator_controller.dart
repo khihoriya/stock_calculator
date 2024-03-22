@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 class MultiStockCalculatorController extends GetxController {
   //TODO: Implement MultiStockCalculatorController
 
+
+
   final count = 0.obs;
   @override
   void onInit() {

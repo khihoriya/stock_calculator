@@ -10,6 +10,12 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
   @override
   Widget build(BuildContext context) {
 
+    TextEditingController sharequnty = TextEditingController();
+    TextEditingController purchaseprice = TextEditingController();
+    TextEditingController currentprice = TextEditingController();
+    TextEditingController currentloss = TextEditingController();
+    TextEditingController recoverloss = TextEditingController();
+
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -29,8 +35,10 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                           color: Colors.blueGrey,
                           borderRadius: BorderRadius.circular(10)),
                       child: TextField(
+                        controller: sharequnty,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          hintText: "Share Quantityyyy",
+                          hintText: "Share Quantity",
                             fillColor: Colors.white,
                             filled: true,
                             border: InputBorder.none,
@@ -59,6 +67,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                           color: Colors.blueGrey,
                           borderRadius: BorderRadius.circular(10)),
                       child: TextField(
+                        controller: purchaseprice,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           hintText: "Purchase Price",
                             fillColor: Colors.white,
@@ -89,6 +99,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                           color: Colors.blueGrey,
                           borderRadius: BorderRadius.circular(10)),
                       child: TextField(
+                        controller: currentprice,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           hintText: "Current Price",
                             fillColor: Colors.white,
