@@ -259,7 +259,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     height: screenHeight * 0.05,
                     width: screenWidth * 0.4,
                     color: AppColors.primary600,
-                    child: const Center(child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.white),)),
+                    child: const Center(child: Text("Calculate",style: TextStyle(fontFamily: AppThemData.bold,fontWeight: FontWeight.bold,color: AppColors.white),)),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -268,7 +268,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     height: screenHeight * 0.05,
                     width: screenWidth * 0.4,
                     color: AppColors.green04,
-                    child: const Center(child: Text("Reset",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),// Second new container color
+                    child: const Center(child: Text("Reset",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontFamily: AppThemData.bold),)),// Second new container color
                   ),
                 ),
               ],
