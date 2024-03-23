@@ -16,7 +16,6 @@ class LossCalculaotController extends GetxController {
   var totalCost = 0.0.obs;
   var averagePricePerShare = 0.0.obs;
   var loss = 0.0.obs;
-
   var lossPercentage = 0.0.obs;
 
   RxString totalSharesString = "".obs;
