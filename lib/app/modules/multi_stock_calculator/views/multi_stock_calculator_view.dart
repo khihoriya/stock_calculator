@@ -39,7 +39,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
               _buildRowWithTextField("4", "₹", controller.qty4, controller.price4),
               _buildRowWithTextField("5", "₹", controller.qty5, controller.price5),
               Obx(
-                () => Padding(
+                    () => Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,7 +49,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                         style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
                       Text(
-                        "RS = ${controller.totalShares}",
+                        "${controller.totalShares}",
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.green,
@@ -69,8 +69,8 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                       style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                     ),
                     Obx(
-                      () => Text(
-                        "${controller.totalCost} rs",
+                          () => Text(
+                        "RS : ${controller.totalCost} ",
                         style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
                     ),
@@ -105,17 +105,32 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                     ),
                     SizedBox(width: 8),
                     Expanded(
-                      child: Container(
-                        height: screenHeight * 0.05,
-                        width: screenWidth * 0.4,
-                        color: Colors.green,
-                        child: const Center(
-                          child: Text(
-                            "Reset",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: AppThemData.bold),
+                      child: InkWell(
+                        onTap: () {
+                          controller.resetValues();
+                          controller.qty1.value = 0;
+                          controller.qty2.value = 0;
+                          controller.qty3.value = 0;
+                          controller.qty4.value = 0;
+                          controller.qty5.value = 0;
+                          controller.price1.value = 0.0;
+                          controller.price2.value = 0.0;
+                          controller.price3.value = 0.0;
+                          controller.price4.value = 0.0;
+                          controller.price5.value = 0.0;
+                        },
+                        child: Container(
+                          height: screenHeight * 0.05,
+                          width: screenWidth * 0.4,
+                          color: Colors.green,
+                          child: const Center(
+                            child: Text(
+                              "Reset",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: AppThemData.bold),
+                            ),
                           ),
                         ),
                       ),
@@ -131,11 +146,16 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
   }
 
   Widget _buildRowWithTextField(
-    String labelText,
-    String suffixText,
-    RxInt qtyController,
-    RxDouble priceController,
-  ) {
+      String labelText,
+      String suffixText,
+      RxInt qtyController,
+      RxDouble priceController,
+      ) {
+    TextEditingController qtyTextController = TextEditingController();
+    TextEditingController priceTextController = TextEditingController();
+
+    qtyTextController.text = qtyController.value.toString();
+    priceTextController.text = priceController.value.toString();
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -154,8 +174,10 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Align(alignment:Alignment.centerLeft ,
+              child: Align(
+                alignment: Alignment.centerLeft,
                 child: TextField(
+                  controller: qtyTextController,
                   onChanged: (value) => qtyController.value = int.tryParse(value) ?? 0,
                   keyboardType: TextInputType.number,
                   style: const TextStyle(fontFamily: AppThemData.semiBold),
@@ -165,7 +187,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                     hintStyle: const TextStyle(color: Colors.black, fontFamily: AppThemData.bold),
                     suffixIcon: IconButton(
                       onPressed: () => qtyController.value = 0,
-                      icon: Icon(Icons.cancel_sharp),
+                      icon: const Icon(Icons.cancel_sharp),
                     ),
                   ),
                 ),
@@ -175,7 +197,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
           const SizedBox(width: 8),
           Text(
             suffixText,
-            style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
           ),
           const SizedBox(width: 8),
           Expanded(
@@ -187,6 +209,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: TextField(
+                controller: priceTextController,
                 onChanged: (value) => priceController.value = double.tryParse(value) ?? 0.0,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
@@ -195,7 +218,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                   hintStyle: const TextStyle(color: Colors.black),
                   suffixIcon: IconButton(
                     onPressed: () => priceController.value = 0.0,
-                    icon: Icon(Icons.cancel_sharp),
+                    icon: const Icon(Icons.cancel_sharp),
                   ),
                 ),
               ),
@@ -206,30 +229,3 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
     );
   }
 }
-
-// class MultiStockCalculatorController extends GetxController {
-//   var qty1 = 0.obs;
-//   var qty2 = 0.obs;
-//   var qty3 = 0.obs;
-//   var qty4 = 0.obs;
-//   var qty5 = 0.obs;
-//
-//   var price1 = 0.0.obs;
-//   var price2 = 0.0.obs;
-//   var price3 = 0.0.obs;
-//   var price4 = 0.0.obs;
-//   var price5 = 0.0.obs;
-//
-//   var totalShares = 0.obs;
-//   var totalCost = 0.0.obs;
-//
-//   void calculateTotalSharesAndCost() {
-//     totalShares.value =
-//         qty1.value + qty2.value + qty3.value + qty4.value + qty5.value;
-//     totalCost.value = (qty1.value * price1.value) +
-//         (qty2.value * price2.value) +
-//         (qty3.value * price3.value) +
-//         (qty4.value * price4.value) +
-//         (qty5.value * price5.value);
-//   }
-// }

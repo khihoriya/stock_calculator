@@ -138,7 +138,9 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                             border: InputBorder.none,
                             hintStyle: TextStyle(color: Colors.black,fontFamily: AppThemData.medium),
                             suffixIcon: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+
+                                },
                                 icon: Icon(Icons.cancel_sharp))),
                       ),
                     ),

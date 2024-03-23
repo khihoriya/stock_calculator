@@ -12,6 +12,9 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(), // Set the default light mode theme
+      darkTheme: ThemeData.dark(), // Set the dark mode theme
+      themeMode: ThemeMode.system,
 
     ),
   );

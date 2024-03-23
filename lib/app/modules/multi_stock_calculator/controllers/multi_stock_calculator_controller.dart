@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class MultiStockCalculatorController extends GetxController {
-
   var qty1 = 0.obs;
   var qty2 = 0.obs;
   var qty3 = 0.obs;
@@ -18,8 +17,7 @@ class MultiStockCalculatorController extends GetxController {
   var totalCost = 0.0.obs;
 
   void calculateTotalSharesAndCost() {
-    totalShares.value =
-        qty1.value + qty2.value + qty3.value + qty4.value + qty5.value;
+    totalShares.value = qty1.value + qty2.value + qty3.value + qty4.value + qty5.value;
     totalCost.value = (qty1.value * price1.value) +
         (qty2.value * price2.value) +
         (qty3.value * price3.value) +
@@ -27,7 +25,25 @@ class MultiStockCalculatorController extends GetxController {
         (qty5.value * price5.value);
   }
 
+  void resetValues() {
+    qty1.value = 0;
+    qty2.value = 0;
+    qty3.value = 0;
+    qty4.value = 0;
+    qty5.value = 0;
+
+    price1.value = 0.0;
+    price2.value = 0.0;
+    price3.value = 0.0;
+    price4.value = 0.0;
+    price5.value = 0.0;
+
+    totalShares.value = 0;
+    totalCost.value = 0.0;
+  }
+
   final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
