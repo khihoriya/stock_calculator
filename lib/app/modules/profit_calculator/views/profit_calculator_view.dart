@@ -174,7 +174,6 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             suffixIcon: IconButton(
                               onPressed: () {
                                 buycomission.clear();
-
                               },
                               icon: Icon(Icons.cancel_sharp),
                             ),
