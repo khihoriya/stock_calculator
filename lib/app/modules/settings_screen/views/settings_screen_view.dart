@@ -45,6 +45,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Terms & Conditions".tr,
                 svgImage: "assets/icons/ic_note.svg",
               ),
+              const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
                 context: context,
                 onTap: () async {
@@ -53,6 +54,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Support".tr,
                 svgImage: "assets/icons/ic_call.svg",
               ),
+              const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
                   context: context,
                   onTap: () {
@@ -67,6 +69,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   svgImage: "assets/icons/ic_contact_us.svg",
                   isHighlighted: true
               ),
+              const Divider(height: 0, color: AppColors.lightGrey05),
               SwitchListTile(
 
                 title: Text(
