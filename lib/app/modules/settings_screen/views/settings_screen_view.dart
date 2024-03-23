@@ -56,7 +56,12 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               menuItemWidget(
                   context: context,
                   onTap: () {
-                    //   Get.toNamed(Routes.CONTACT_US_SCREEN);
+                    final Uri emailLaunchUri = Uri(
+                      scheme: 'mailto',
+                      path: 'gopinathitech@gmail.com', // Replace with your email address
+                    );
+
+                    launch(emailLaunchUri.toString());
                   },
                   title: "Contact us".tr,
                   svgImage: "assets/icons/ic_contact_us.svg",
