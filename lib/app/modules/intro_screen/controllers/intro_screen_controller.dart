@@ -17,17 +17,17 @@ class IntroScreenController extends GetxController {
 
   getIntroScreenData() {
     introScreenList.add(IntroScreenModel(
-        title: "Discover Convenient Parking",
-        description: "Explore nearby parking spaces with ease and find the perfect spot for your vehicle.",
+        title: "Your Stock Average Calculator",
+        description: "it is use for effortlessly calculating stocks",
         image: "assets/images/image_1.jpg"));
     introScreenList.add(IntroScreenModel(
-      title: "Watchman Assistance",
-      description: "Our app provides watchman assistance for added security and peace of mind.",
+      title: "profit calculation",
+      description: "user-friendly app designed to quickly calculate your investment profits.",
       image: "assets/images/image_2.jpg",
     ));
     introScreenList.add(IntroScreenModel(
-        title: "Wallet Management",
-        description: "Easily manage your wallet, add funds, and track transactions for quick payments",
+        title: "multi stocks calculation",
+        description: "calculating profits and loos across multiple stocks ",
         image: "assets/images/image.jpg"));
   }
 }

@@ -16,9 +16,9 @@ class IntroScreenView extends GetView<IntroScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.lightGrey02,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
-          backgroundColor: AppColors.lightGrey02,
+          backgroundColor: AppColors.white,
           automaticallyImplyLeading: false,
           elevation: 0,
           titleSpacing: 16,
@@ -69,7 +69,7 @@ class IntroScreenView extends GetView<IntroScreenController> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        height: 300,
+                        height: 400,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(image: DecorationImage(image: AssetImage("${introScreenModel.image}"))),
                       ),

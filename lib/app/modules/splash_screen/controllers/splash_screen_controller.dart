@@ -14,5 +14,8 @@ class SplashScreenController extends GetxController {
     if (Preferences.getBoolean(Preferences.isFinishOnBoardingKey) == false) {
       Get.offAllNamed(Routes.INTRO_SCREEN);
     }
+    else{
+      Get.offAllNamed(Routes.HOME);
+    }
   }
 }
