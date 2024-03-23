@@ -168,14 +168,15 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
           SizedBox(width: 8),
           Expanded(
             child: AnimatedContainer(
+
               duration: Duration(seconds: 2),
-              height: 40, // Adjust the height here
+             height: 40,// Adjust the height here
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: TextField(
                   controller: qtyTextController,
                   onChanged: (value) => qtyController.value = int.tryParse(value) ?? 0,

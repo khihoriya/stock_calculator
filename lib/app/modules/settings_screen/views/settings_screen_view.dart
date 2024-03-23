@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:stock_calculator/constant/constant.dart';
@@ -22,6 +23,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
           body: Column(
             children: [
               menuItemWidget(
+                context: context,
                 onTap: () async {
                   final Uri url = Uri.parse("");
                   if (!await launchUrl(url)) {
@@ -33,6 +35,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               ),
               const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
+                context: context,
                 onTap: () async {
                   final Uri url = Uri.parse('');
                   if (!await launchUrl(url)) {
@@ -43,6 +46,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 svgImage: "assets/icons/ic_note.svg",
               ),
               menuItemWidget(
+                context: context,
                 onTap: () async {
                   Constant().launchEmailSupport();
                 },
@@ -50,14 +54,16 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 svgImage: "assets/icons/ic_call.svg",
               ),
               menuItemWidget(
+                  context: context,
                   onTap: () {
                     //   Get.toNamed(Routes.CONTACT_US_SCREEN);
                   },
                   title: "Contact us".tr,
-                  svgImage: "assets/icons/ic_info.svg",
+                  svgImage: "assets/icons/ic_contact_us.svg",
                   isHighlighted: true
               ),
               SwitchListTile(
+
                 title: Text(
                   "Dark mode/White mode".tr,
                   style: const TextStyle(
@@ -68,7 +74,8 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 ),
                 value: controller.isDarkMode.value,
                 onChanged: (value) {
-                  controller.toggleTheme(); // Call toggleTheme method
+                  controller.toggleTheme();
+                  storeThemeMode(value);// Call toggleTheme method
                 },
               ),
             ],
@@ -79,6 +86,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
   }
 
   menuItemWidget({
+    required BuildContext context,
     required String svgImage,
     required String title,
     required VoidCallback onTap,
@@ -86,8 +94,9 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
   }) {
     return GetBuilder<SettingsScreenController>(
       builder: (controller) {
+
         return ListTile(
-          tileColor: isHighlighted ? AppColors.white : AppColors.grey01, // Adjust tile color based on isHighlighted
+          tileColor: Theme.of(context).colorScheme.background, // Adjust tile color based on isHighlighted
           contentPadding: const EdgeInsets.symmetric(horizontal: 16),
           horizontalTitleGap: 6,
           onTap: onTap,
@@ -116,5 +125,10 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
         );
       },
     );
+  }
+
+  void storeThemeMode(bool isDarkMode) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isDarkMode', isDarkMode);
   }
 }

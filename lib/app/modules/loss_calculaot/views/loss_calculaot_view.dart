@@ -34,24 +34,29 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                         border: Border.all(width: 3,color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
-                      child: TextField(
-                        controller: controller.shareQuantityController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Share Quantity",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontFamily: AppThemData.medium),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  controller.shareQuantityController.clear();
-                                },
-                                icon: Icon(Icons.cancel_sharp))),
+                      child: Container(
+
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          controller: controller.shareQuantityController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "Share Quantity",
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: AppThemData.medium),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.shareQuantityController.clear();
+                                  },
+                                  icon: Icon(Icons.cancel_sharp))),
+                        ),
                       ),
                     ),
                   ),
@@ -70,24 +75,28 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                         border: Border.all(width: 3,color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
-                      child: TextField(
-                        controller: controller.purchasePriceController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Purchase Price",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontFamily: AppThemData.medium),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  controller.purchasePriceController.clear();
-                                },
-                                icon: Icon(Icons.cancel_sharp))),
+                      child: Container(
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          controller: controller.purchasePriceController,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "Purchase Price",
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: AppThemData.medium),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.purchasePriceController.clear();
+                                  },
+                                  icon: Icon(Icons.cancel_sharp))),
+                        ),
                       ),
                     ),
                   ),
@@ -106,27 +115,31 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                         border: Border.all(width: 3,color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
-                      child: TextField(
-                        controller: controller.currentPriceController,
-                        onChanged: (value) {
-                          controller.calculateLossPercentage();
-                        },
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Current Price",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontFamily: AppThemData.medium),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  controller.currentPriceController.clear();
-                                },
-                                icon: Icon(Icons.cancel_sharp))),
+                      child: Container(
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          controller: controller.currentPriceController,
+                          onChanged: (value) {
+                            controller.calculateLossPercentage();
+                          },
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "Current Price",
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: AppThemData.medium),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.currentPriceController.clear();
+                                  },
+                                  icon: Icon(Icons.cancel_sharp))),
+                        ),
                       ),
                     ),
                   ),
@@ -145,27 +158,31 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                         border: Border.all(width: 3,color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
-                      child: TextField(
-                        controller: controller.currentLossPercentageController,
-                        onChanged: (value) {
-                          //controller.calculateLossPercentage();
-                        },
-                        decoration: InputDecoration(
-                            hintText: "Current Loss (%)",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontFamily: AppThemData.medium),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  controller.currentLossPercentageController
-                                      .clear();
-                                },
-                                icon: Icon(Icons.cancel_sharp))),
+                      child: Container(
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          controller: controller.currentLossPercentageController,
+                          onChanged: (value) {
+                            //controller.calculateLossPercentage();
+                          },
+                          decoration: InputDecoration(
+                              hintText: "Current Loss (%)",
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: AppThemData.medium),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.currentLossPercentageController
+                                        .clear();
+                                  },
+                                  icon: Icon(Icons.cancel_sharp))),
+                        ),
                       ),
                     ),
                   ),
@@ -184,24 +201,28 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                         border: Border.all(width: 3,color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
-                      child: TextField(
-                        controller: controller.recoverLossPercentageController,
-                        decoration: InputDecoration(
-                            hintText: "Recover Loss (%)",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontFamily: AppThemData.medium),
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  controller.recoverLossPercentageController
-                                      .clear();
-                                },
-                                icon: Icon(Icons.cancel_sharp))),
+                      child: Container(
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: TextField(
+                          controller: controller.recoverLossPercentageController,
+                          decoration: InputDecoration(
+                              hintText: "Recover Loss (%)",
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: AppThemData.medium),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    controller.recoverLossPercentageController
+                                        .clear();
+                                  },
+                                  icon: Icon(Icons.cancel_sharp))),
+                        ),
                       ),
                     ),
                   ),

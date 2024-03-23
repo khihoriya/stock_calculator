@@ -82,21 +82,26 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            border: Border.all(width: 3,color: Colors.blueGrey),
+
                             borderRadius: BorderRadius.circular(10)),
-                        child: TextField(
-                          controller: originalshareqty,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: InputBorder.none,
-                              hintStyle: TextStyle(color: Colors.black),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() {});
-                                  },
-                                  icon: Icon(Icons.cancel_sharp))),
+                        child: Container(
+                          margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: originalshareqty,
+                            decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(color: Colors.black),
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {});
+                                    },
+                                    icon: Icon(Icons.cancel_sharp))),
+                          ),
                         ),
                       ),
                     ),
@@ -126,21 +131,26 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            border: Border.all(width: 3,color: Colors.blueGrey),
+
                             borderRadius: BorderRadius.circular(10)),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          controller: purchaseprice,
-                          decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: InputBorder.none,
-                              hintStyle: TextStyle(color: Colors.black),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() {});
-                                  },
-                                  icon: Icon(Icons.cancel_sharp))),
+                        child: Container(
+                          margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: purchaseprice,
+                            decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(color: Colors.black),
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {});
+                                    },
+                                    icon: Icon(Icons.cancel_sharp))),
+                          ),
                         ),
                       ),
                     ),
@@ -170,21 +180,24 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            border: Border.all(width: 3,color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
-                        child: TextField(
-                          controller: newshareqty,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: InputBorder.none,
-                              hintStyle: TextStyle(color: Colors.black),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() {});
-                                  },
-                                  icon: Icon(Icons.cancel_sharp))),
+                        child: Container( margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: TextField(
+                            controller: newshareqty,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(color: Colors.black),
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {});
+                                    },
+                                    icon: Icon(Icons.cancel_sharp))),
+                          ),
                         ),
                       ),
                     ),
@@ -214,21 +227,24 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            border: Border.all(width: 3,color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
-                        child: TextField(
-                          controller: newpurchaseprice,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: InputBorder.none,
-                              hintStyle: TextStyle(color: Colors.black),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    setState(() {});
-                                  },
-                                  icon: Icon(Icons.cancel_sharp))),
+                        child: Container( margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: TextField(
+                            controller: newpurchaseprice,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: InputBorder.none,
+                                hintStyle: TextStyle(color: Colors.black),
+                                suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {});
+                                    },
+                                    icon: Icon(Icons.cancel_sharp))),
+                          ),
                         ),
                       ),
                     ),

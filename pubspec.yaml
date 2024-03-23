@@ -10,6 +10,7 @@ dependencies:
   get: 4.6.6
   flutter_slider_drawer:
   lottie:
+  shared_preferences:
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.1.14
 

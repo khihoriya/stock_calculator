@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreenController extends GetxController {
-  // Variable to track the current theme mode
+
   var isDarkMode = false.obs;
 
   @override
   void onInit() {
     super.onInit();
 
-    isDarkMode.value = false;
+   // isDarkMode.value = false;
+    getThemeMode();
   }
 
 
@@ -18,6 +20,11 @@ class SettingsScreenController extends GetxController {
     isDarkMode.value = !isDarkMode.value;
 
     Get.changeThemeMode(isDarkMode.value ? ThemeMode.dark : ThemeMode.light);
+  }
+
+  void getThemeMode() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    isDarkMode.value = prefs.getBool('isDarkMode') ?? false;
   }
 
   @override
