@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                                 filled: true,
                                 border: InputBorder.none,
                                 hintStyle: const TextStyle(
-                                    color: Colors.black,
+                                    color: AppColors.lightGrey09,
                                     fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                                 filled: true,
                                 border: InputBorder.none,
                                 hintStyle: const TextStyle(
-                                    color: Colors.black,
+                                    color:AppColors.lightGrey09,
                                     fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
@@ -215,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                                 filled: true,
                                 border: InputBorder.none,
                                 hintStyle: TextStyle(
-                                    color: Colors.black,
+                                    color: AppColors.lightGrey09,
                                     fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
@@ -258,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                 filled: true,
                                 border: InputBorder.none,
                                 hintStyle: const TextStyle(
-                                    color: Colors.black,
+                                    color: AppColors.lightGrey09,
                                     fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {

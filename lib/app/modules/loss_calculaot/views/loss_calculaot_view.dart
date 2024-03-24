@@ -49,7 +49,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                               filled: true,
                               border: InputBorder.none,
                               hintStyle: const TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.lightGrey09,
                                   fontFamily: AppThemData.medium),
                               suffixIcon: IconButton(
                                   onPressed: () {
@@ -90,7 +90,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                               filled: true,
                               border: InputBorder.none,
                               hintStyle: const TextStyle(
-                                  color: Colors.black,
+                                  color:AppColors.lightGrey09,
                                   fontFamily: AppThemData.medium),
                               suffixIcon: IconButton(
                                   onPressed: () {
@@ -134,7 +134,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                               filled: true,
                               border: InputBorder.none,
                               hintStyle: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.lightGrey09,
                                   fontFamily: AppThemData.medium),
                               suffixIcon: IconButton(
                                   onPressed: () {
@@ -178,7 +178,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                               filled: true,
                               border: InputBorder.none,
                               hintStyle: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.lightGrey09,
                                   fontFamily: AppThemData.medium),
                               suffixIcon: IconButton(
                                   onPressed: () {
@@ -219,8 +219,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                               fillColor: Colors.white,
                               filled: true,
                               border: InputBorder.none,
-                              hintStyle: TextStyle(
-                                  color: Colors.black,
+                              hintStyle: const TextStyle(
+                                  color: AppColors.lightGrey09,
                                   fontFamily: AppThemData.medium),
                               suffixIcon: IconButton(
                                   onPressed: () {
@@ -237,10 +237,17 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
               ],
             ),
           ),
-          Obx(() => Text(
-                "New Shares Quantity: ${controller.newsharequantityint}",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              )),
+          Obx(() => Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                      "New Shares Quantity: ${controller.newsharequantityint}",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+              ),
+            ],
+          )),
           Obx(() => Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Row(
