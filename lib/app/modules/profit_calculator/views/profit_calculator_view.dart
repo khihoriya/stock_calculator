@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
-import '../controllers/profit_calculator_controller.dart';
 
 class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
   ProfitCalculatorView({Key? key}) : super(key: key);
@@ -36,7 +35,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             fontWeight: FontWeight.bold,
                             fontFamily: AppThemData.bold),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: AnimatedContainer(
                           duration: Duration(seconds: 2),
@@ -75,7 +74,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             fontWeight: FontWeight.bold,
                             fontFamily: AppThemData.bold),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: AnimatedContainer(
                           duration: Duration(seconds: 2),
@@ -118,7 +117,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             fontWeight: FontWeight.bold,
                             fontFamily: AppThemData.bold),
                       ),
-                      SizedBox(width: 8),
+                      SizedBox(width: 52),
                       Expanded(
                         child: AnimatedContainer(
                           duration: Duration(seconds: 2),
@@ -173,6 +172,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              hintText: "₹",
                               filled: true,
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8)),
@@ -231,6 +231,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              hintText: '₹',
                               filled: true,
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8)),
