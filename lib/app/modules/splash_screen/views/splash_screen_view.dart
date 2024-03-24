@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
 import '../controllers/splash_screen_controller.dart';
 
@@ -13,23 +12,26 @@ class SplashScreenView extends StatelessWidget {
       init: SplashScreenController(),
       builder: (controller) {
         return Scaffold(
-          backgroundColor: AppColors.primary,
+          backgroundColor: const Color(0xffF1F1F1),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "assets/images/logo.JPEG",
+                  "assets/images/logo.png",
                   height: 250,
                   width: 250,
                   fit: BoxFit.cover,
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
                 const Text(
-                  "stock average calculator",
+                  "Stock price calculator",
                   style: TextStyle(
                       fontFamily: AppThemData.bold,
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 26),
                 ),
                 // const Text(

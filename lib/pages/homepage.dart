@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   TextEditingController originalshareqty = TextEditingController();
   TextEditingController purchaseprice = TextEditingController();
   TextEditingController newshareqty = TextEditingController();
@@ -40,7 +39,8 @@ class _HomePageState extends State<HomePage> {
       Get.snackbar("Error", "Please enter new purchase price");
     } else {
       totalshare.value = int.parse(shareqty) + int.parse(newhsareqtyyy);
-      totalcost.value = (int.parse(shareqty) * int.parse(purchasepricee)) + (int.parse(newhsareqtyyy) * int.parse(newpurchasepricee));
+      totalcost.value = (int.parse(shareqty) * int.parse(purchasepricee)) +
+          (int.parse(newhsareqtyyy) * int.parse(newpurchasepricee));
       averageprice.value = totalcost.value / totalshare.value;
     }
   }
@@ -67,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Original share quantity",
-                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -82,12 +84,13 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 3,color: Colors.blueGrey),
-
+                            border:
+                                Border.all(width: 3, color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
                         child: Container(
                           margin: EdgeInsets.all(3),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             keyboardType: TextInputType.number,
                             controller: originalshareqty,
@@ -116,7 +119,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Purchase price",
-                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -131,12 +136,13 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 3,color: Colors.blueGrey),
-
+                            border:
+                                Border.all(width: 3, color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
                         child: Container(
                           margin: EdgeInsets.all(3),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             keyboardType: TextInputType.number,
                             controller: purchaseprice,
@@ -165,7 +171,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "New Share Qty",
-                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -180,10 +188,13 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 3,color: Colors.blueGrey),
+                            border:
+                                Border.all(width: 3, color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
-                        child: Container( margin: EdgeInsets.all(3),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: Container(
+                          margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             controller: newshareqty,
                             keyboardType: TextInputType.number,
@@ -212,7 +223,9 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "New Purchase Price",
-                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                 ],
               ),
@@ -227,10 +240,13 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            border: Border.all(width: 3,color: Colors.blueGrey),
+                            border:
+                                Border.all(width: 3, color: Colors.blueGrey),
                             borderRadius: BorderRadius.circular(10)),
-                        child: Container( margin: EdgeInsets.all(3),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        child: Container(
+                          margin: EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             controller: newpurchaseprice,
                             keyboardType: TextInputType.number,
@@ -260,12 +276,16 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Average Price Per Share ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                   Obx(() => Text(
-                    "${averageprice.value.toStringAsFixed(2)}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
-                  )),
+                        "${averageprice.value.toStringAsFixed(2)}",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: AppThemData.bold),
+                      )),
                 ],
               ),
             ),
@@ -276,12 +296,16 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Total Share ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                   Obx(() => Text(
-                    "${totalshare.value}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
-                  )),
+                        "${totalshare.value}",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: AppThemData.bold),
+                      )),
                 ],
               ),
             ),
@@ -292,16 +316,19 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Total Cost ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppThemData.bold),
                   ),
                   Obx(() => Text(
-                    "${totalcost.value}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
-                  )),
+                        "${totalcost.value}",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: AppThemData.bold),
+                      )),
                 ],
               ),
             ),
-
             Padding(
               padding: EdgeInsets.all(12.0),
               child: Row(
@@ -313,53 +340,85 @@ class _HomePageState extends State<HomePage> {
                         String shareqty = originalshareqty.text.toString();
                         String purchasepricee = purchaseprice.text.toString();
                         String newhsareqtyyy = newshareqty.text.toString();
-                        String newpurchasepricee = newpurchaseprice.text.toString();
+                        String newpurchasepricee =
+                            newpurchaseprice.text.toString();
 
                         if (originalshareqty.text.isEmpty) {
-                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(content: Text("Please enter original share qty")));
+                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                              SnackBar(
+                                  content:
+                                      Text("Please enter original share qty")));
                         } else if (purchaseprice.text.isEmpty) {
-                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(content: Text("Please enter purchase price")));
+                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                              SnackBar(
+                                  content:
+                                      Text("Please enter purchase price")));
                         } else if (newshareqty.text.isEmpty) {
-                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(content: Text("Please enter new share qty")));
+                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                              SnackBar(
+                                  content: Text("Please enter new share qty")));
                         } else if (newpurchaseprice.text.isEmpty) {
-                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(SnackBar(content: Text("Please enter new purchase price")));
+                          ScaffoldMessenger.maybeOf(context)!.showSnackBar(
+                              SnackBar(
+                                  content:
+                                      Text("Please enter new purchase price")));
                         } else {
-                          totalshare.value = int.parse(shareqty) + int.parse(newhsareqtyyy);
-                          totalcost.value = (int.parse(shareqty) * int.parse(purchasepricee)) + (int.parse(newhsareqtyyy) * int.parse(newpurchasepricee));
-                          averageprice.value = totalcost.value / totalshare.value;
+                          totalshare.value =
+                              int.parse(shareqty) + int.parse(newhsareqtyyy);
+                          totalcost.value = (int.parse(shareqty) *
+                                  int.parse(purchasepricee)) +
+                              (int.parse(newhsareqtyyy) *
+                                  int.parse(newpurchasepricee));
+                          averageprice.value =
+                              totalcost.value / totalshare.value;
                         }
                       },
                       child: Container(
                         height: screenHeight * 0.05,
                         width: screenWidth * 0.4,
-                        color: AppColors.primary600,
+                        decoration: BoxDecoration(
+                            color: AppColors.primary600,
+                            borderRadius: BorderRadius.circular(8)),
                         child: Center(
                           child: Text(
                             "Calculate",
-                            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.white),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.white,
+                                fontFamily: AppThemData.bold),
                           ),
                         ),
                       ),
                     ),
                   ),
-
                   const SizedBox(width: 8),
                   Expanded(
-                    child: InkWell(onTap: () {
-                      originalshareqty.clear();
-                      purchaseprice.clear();
-                      newshareqty.clear();
-                      newpurchaseprice.clear();
+                    child: InkWell(
+                      onTap: () {
+                        originalshareqty.clear();
+                        purchaseprice.clear();
+                        newshareqty.clear();
+                        newpurchaseprice.clear();
 
-                      totalshare.value = 0;
-                      totalcost.value = 0;
-                      averageprice.value = 0;
-                    },
+                        totalshare.value = 0;
+                        totalcost.value = 0;
+                        averageprice.value = 0;
+                      },
                       child: Container(
                         height: screenHeight * 0.05,
                         width: screenWidth * 0.4,
-                        color: AppColors.green04,
-                        child: const Center(child: Text("Reset",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),// Second new container color
+
+                        decoration: BoxDecoration(
+                            color: AppColors.green04,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: const Center(
+                            child: Text(
+                          "Reset",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontFamily: AppThemData.bold),
+                        )), // Second new container color
                       ),
                     ),
                   ),

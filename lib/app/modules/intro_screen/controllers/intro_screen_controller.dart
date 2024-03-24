@@ -17,7 +17,7 @@ class IntroScreenController extends GetxController {
 
   getIntroScreenData() {
     introScreenList.add(IntroScreenModel(
-        title: "Your Stock Average Calculator",
+        title: "Your Stock price Calculator",
         description: "it is use for effortlessly calculating stocks",
         image: "assets/images/image_1.jpg"));
     introScreenList.add(IntroScreenModel(

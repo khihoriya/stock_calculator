@@ -34,12 +34,12 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                         border: Border.all(width: 3,color: Colors.blueGrey),
+                          border: Border.all(width: 3, color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
                       child: Container(
-
                         margin: EdgeInsets.all(3),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
                         child: TextField(
                           controller: controller.shareQuantityController,
                           keyboardType: TextInputType.number,
@@ -75,11 +75,12 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                         border: Border.all(width: 3,color: Colors.blueGrey),
+                          border: Border.all(width: 3, color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
                       child: Container(
                         margin: EdgeInsets.all(3),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
                         child: TextField(
                           controller: controller.purchasePriceController,
                           keyboardType: TextInputType.number,
@@ -115,11 +116,12 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                         border: Border.all(width: 3,color: Colors.blueGrey),
+                          border: Border.all(width: 3, color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
                       child: Container(
                         margin: EdgeInsets.all(3),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
                         child: TextField(
                           controller: controller.currentPriceController,
                           onChanged: (value) {
@@ -158,13 +160,15 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                         border: Border.all(width: 3,color: Colors.blueGrey),
+                          border: Border.all(width: 3, color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
                       child: Container(
                         margin: EdgeInsets.all(3),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
                         child: TextField(
-                          controller: controller.currentLossPercentageController,
+                          controller:
+                              controller.currentLossPercentageController,
                           onChanged: (value) {
                             //controller.calculateLossPercentage();
                           },
@@ -201,13 +205,15 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
-                         border: Border.all(width: 3,color: Colors.blueGrey),
+                          border: Border.all(width: 3, color: Colors.blueGrey),
                           borderRadius: BorderRadius.circular(10)),
                       child: Container(
                         margin: EdgeInsets.all(3),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
                         child: TextField(
-                          controller: controller.recoverLossPercentageController,
+                          controller:
+                              controller.recoverLossPercentageController,
                           decoration: InputDecoration(
                               hintText: "Recover Loss (%)",
                               fillColor: Colors.white,
@@ -240,7 +246,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Total share ",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -261,7 +267,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Total Cost ",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -311,7 +317,10 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       height: screenHeight * 0.05,
                       width: screenWidth * 0.4,
-                      color: AppColors.primary600,
+                      decoration: BoxDecoration(
+                        color: AppColors.primary600,
+                         borderRadius: BorderRadius.circular(8)
+                      ),
                       child: const Center(
                           child: Text(
                         "Calculate",
@@ -332,7 +341,10 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     child: Container(
                       height: screenHeight * 0.05,
                       width: screenWidth * 0.4,
-                      color: AppColors.green04,
+                      decoration: BoxDecoration(
+                          color: AppColors.green04,
+                          borderRadius: BorderRadius.circular(8)
+                      ),
                       child: const Center(
                           child: Text(
                         "Reset",
