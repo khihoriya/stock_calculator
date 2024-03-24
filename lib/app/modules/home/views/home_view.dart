@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:provider/provider.dart';
+import 'package:stock_calculator/themes/app_colors.dart';
+import 'package:stock_calculator/themes/dark_theme_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     "Original share quantity",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold,color: themeChange.getThem() ? AppColors.labelColorLightPrimary : AppColors.white),
                   ),
                 ],
               ),

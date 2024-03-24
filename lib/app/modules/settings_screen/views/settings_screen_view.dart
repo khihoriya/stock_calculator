@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stock_calculator/preferences.dart';
+import 'package:stock_calculator/themes/dark_theme_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'package:stock_calculator/constant/constant.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
-
 import '../controllers/settings_screen_controller.dart';
 
 class SettingsScreenView extends GetView<SettingsScreenController> {
@@ -15,14 +16,18 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return GetBuilder(
       init: SettingsScreenController(),
       builder: (controller) {
         return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.background,// Set initial background color based on theme mode
+          backgroundColor: Theme.of(context)
+              .colorScheme
+              .background, // Set initial background color based on theme mode
           body: Column(
             children: [
               menuItemWidget(
+                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
                   final Uri url = Uri.parse("");
@@ -35,6 +40,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               ),
               const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
+                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
                   final Uri url = Uri.parse('');
@@ -47,6 +53,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               ),
               const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
+                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
                   Constant().launchEmailSupport();
@@ -56,6 +63,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               ),
               const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
+                  color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                   context: context,
                   onTap: () {
                     final Uri emailLaunchUri = Uri(
@@ -67,25 +75,41 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   },
                   title: "Contact us".tr,
                   svgImage: "assets/icons/ic_contact_us.svg",
-                  isHighlighted: true
+                  isHighlighted: true),
+              const SizedBox(
+                height: 15,
               ),
-              const Divider(height: 0, color: AppColors.lightGrey05),
+              const Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Change Theme',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: AppThemData.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SwitchListTile(
-
                 title: Text(
                   "Dark mode/White mode".tr,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
-                    fontFamily: AppThemData.medium,
-                    color: AppColors.darkGrey08,
+                    fontFamily: AppThemData.bold,
+                    color: themeChange.getThem() ? AppColors.gallery200 : AppColors.gallery800,
                   ),
                 ),
-                value: controller.isDarkMode.value,
+                value: themeChange.darkTheme == 0,
                 onChanged: (value) {
-                  controller.toggleTheme();
-                  storeThemeMode(value);// Call toggleTheme method
+                  themeChange.darkTheme = value ? 0 : 1; // 0 for Dark, 1 for Light
+                  String themeMode = value ? "Dark" : "Light";
+                  Preferences.setString(Preferences.themKey, themeMode);
                 },
-              ),
+                activeColor: AppColors.green04,
+              ).marginOnly(left: 10),
             ],
           ),
         );
@@ -97,14 +121,15 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
     required BuildContext context,
     required String svgImage,
     required String title,
+    required Color color,
     required VoidCallback onTap,
-    bool isHighlighted = false, // Add a default value for isHighlighted
+    bool isHighlighted = false,
   }) {
     return GetBuilder<SettingsScreenController>(
       builder: (controller) {
-
         return ListTile(
-          tileColor: Theme.of(context).colorScheme.background, // Adjust tile color based on isHighlighted
+          tileColor: Theme.of(context).colorScheme.background,
+          // Adjust tile color based on isHighlighted
           contentPadding: const EdgeInsets.symmetric(horizontal: 16),
           horizontalTitleGap: 6,
           onTap: onTap,
@@ -124,7 +149,6 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   style: const TextStyle(
                     fontSize: 16,
                     fontFamily: AppThemData.medium,
-                    color: AppColors.darkGrey08,
                   ),
                 ),
               ),
