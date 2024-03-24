@@ -61,19 +61,48 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "Original share quantity",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppThemData.bold),
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Row(
+            //     children: [
+            //       Expanded(
+            //         child: AnimatedContainer(
+            //           duration: Duration(seconds: 2),
+            //           child: Container(
+            //             margin: const EdgeInsets.all(3),
+            //             decoration: BoxDecoration(
+            //                 border:
+            //                     Border.all(width: 3, color: Colors.blueGrey),
+            //                 borderRadius: BorderRadius.circular(12)),
+            //             child: Container(
+            //               margin: const EdgeInsets.all(3),
+            //               decoration: BoxDecoration(
+            //                   borderRadius: BorderRadius.circular(12)),
+            //               child: TextField(
+            //                 keyboardType: TextInputType.number,
+            //                 controller: originalshareqty,
+            //                 decoration: InputDecoration(
+            //                     hintText: "Original share quantity",
+            //                     fillColor: Colors.white,
+            //                     filled: true,
+            //                     border: InputBorder.none,
+            //                     hintStyle: const TextStyle(
+            //                         color: Colors.black,
+            //                         fontFamily: AppThemData.medium),
+            //                     suffixIcon: IconButton(
+            //                         onPressed: () {
+            //                           setState(() {});
+            //                         },
+            //                         icon: Icon(Icons.cancel_sharp))),
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //       SizedBox(width: 8),
+            //     ],
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -82,25 +111,29 @@ class _HomePageState extends State<HomePage> {
                     child: AnimatedContainer(
                       duration: Duration(seconds: 2),
                       child: Container(
-                        padding: EdgeInsets.all(3),
+                        padding: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
                             border:
-                                Border.all(width: 3, color: Colors.blueGrey),
-                            borderRadius: BorderRadius.circular(10)),
+                            Border.all(width: 3, color: Colors.blueGrey),
+                            borderRadius: BorderRadius.circular(12)),
                         child: Container(
-                          margin: EdgeInsets.all(3),
+                          margin: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(12)),
                           child: TextField(
                             keyboardType: TextInputType.number,
                             controller: originalshareqty,
                             decoration: InputDecoration(
+                                hintText: 'Original share quantity',
                                 fillColor: Colors.white,
                                 filled: true,
                                 border: InputBorder.none,
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
+                                      originalshareqty.clear();
                                       setState(() {});
                                     },
                                     icon: Icon(Icons.cancel_sharp))),
@@ -113,19 +146,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "Purchase price",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppThemData.bold),
-                  ),
-                ],
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -134,25 +154,29 @@ class _HomePageState extends State<HomePage> {
                     child: AnimatedContainer(
                       duration: Duration(seconds: 2),
                       child: Container(
-                        padding: EdgeInsets.all(3),
+                        padding: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
                             border:
                                 Border.all(width: 3, color: Colors.blueGrey),
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(12)),
                         child: Container(
-                          margin: EdgeInsets.all(3),
+                          margin: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(12)),
                           child: TextField(
                             keyboardType: TextInputType.number,
                             controller: purchaseprice,
                             decoration: InputDecoration(
+                                hintText: 'Purchase price',
                                 fillColor: Colors.white,
                                 filled: true,
                                 border: InputBorder.none,
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
+                                      purchaseprice.clear();
                                       setState(() {});
                                     },
                                     icon: Icon(Icons.cancel_sharp))),
@@ -162,19 +186,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(width: 8),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "New Share Qty",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppThemData.bold),
-                  ),
                 ],
               ),
             ),
@@ -190,21 +201,25 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             border:
                                 Border.all(width: 3, color: Colors.blueGrey),
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(12)),
                         child: Container(
                           margin: EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(12)),
                           child: TextField(
                             controller: newshareqty,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
+                                hintText: 'New Share Qty',
                                 fillColor: Colors.white,
                                 filled: true,
                                 border: InputBorder.none,
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
+                                      newshareqty.clear();
                                       setState(() {});
                                     },
                                     icon: Icon(Icons.cancel_sharp))),
@@ -214,19 +229,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(width: 8),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "New Purchase Price",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppThemData.bold),
-                  ),
                 ],
               ),
             ),
@@ -242,24 +244,27 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             border:
                                 Border.all(width: 3, color: Colors.blueGrey),
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(12)),
                         child: Container(
                           margin: EdgeInsets.all(3),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(12)),
                           child: TextField(
                             controller: newpurchaseprice,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
+                                hintText: 'New Purchase Price',
                                 fillColor: Colors.white,
                                 filled: true,
                                 border: InputBorder.none,
-                                hintStyle: TextStyle(color: Colors.black),
+                                hintStyle: const TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
                                       setState(() {});
                                     },
-                                    icon: Icon(Icons.cancel_sharp))),
+                                    icon: const Icon(Icons.cancel_sharp))),
                           ),
                         ),
                       ),
@@ -281,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                         fontFamily: AppThemData.bold),
                   ),
                   Obx(() => Text(
-                        "${averageprice.value.toStringAsFixed(2)}",
+                        "RS ${averageprice.value.toStringAsFixed(2)}",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: AppThemData.bold),
@@ -321,7 +326,7 @@ class _HomePageState extends State<HomePage> {
                         fontFamily: AppThemData.bold),
                   ),
                   Obx(() => Text(
-                        "${totalcost.value}",
+                        "RS ${totalcost.value}",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontFamily: AppThemData.bold),
