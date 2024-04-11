@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stock_calculator/app/modules/multi_stock_calculator/controllers/multi_stock_calculator_controller.dart';
@@ -159,6 +160,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
@@ -187,36 +189,33 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
         children: [
           Text(
             labelText,
-            style: TextStyle(
+            style: const TextStyle(
                 fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Expanded(
             child: AnimatedContainer(
-              duration: Duration(seconds: 2),
+              duration: const Duration(seconds: 2),
               height: 40, // Adjust the height here
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Align(
-                alignment: Alignment.center,
-                child: TextField(
-                  controller: qtyTextController,
-                  onChanged: (value) =>
-                      qtyController.value = int.tryParse(value) ?? 0,
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(fontFamily: AppThemData.semiBold),
-                  decoration: InputDecoration(
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    hintStyle: const TextStyle(
-                        color: Colors.black, fontFamily: AppThemData.bold),
-                    suffixIcon: IconButton(
-                      onPressed: () => qtyController.value = 0,
-                      icon: const Icon(Icons.cancel_sharp),
-                    ),
+              child: TextField(
+                controller: qtyTextController,
+                onChanged: (value) =>
+                    qtyController.value = int.tryParse(value) ?? 0,
+                keyboardType: TextInputType.number,
+                style: const TextStyle(fontFamily: AppThemData.semiBold),
+                decoration: InputDecoration(
+                  filled: true,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  hintStyle: const TextStyle(
+                      color: Colors.black, fontFamily: AppThemData.bold),
+                  suffixIcon: IconButton(
+                    onPressed: () => qtyController.value = 0,
+                    icon: const Icon(Icons.cancel_sharp),
                   ),
                 ),
               ),
@@ -225,31 +224,33 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
           const SizedBox(width: 8),
           Text(
             suffixText,
-            style: TextStyle(
+            style: const TextStyle(
                 fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
           ),
           const SizedBox(width: 8),
           Expanded(
             child: AnimatedContainer(
-              duration: Duration(seconds: 2),
-              height: 40, // Adjust the height here
+              duration: const Duration(seconds: 2),
+              height: 45, // Adjust the height here
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: TextField(
-                controller: priceTextController,
-                onChanged: (value) =>
-                    priceController.value = double.tryParse(value) ?? 0.0,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                decoration: InputDecoration(
-                  filled: true,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)),
-                  hintStyle: const TextStyle(color: Colors.black),
-                  suffixIcon: IconButton(
-                    onPressed: () => priceController.value = 0.0,
-                    icon: const Icon(Icons.cancel_sharp),
+              child: Align(alignment: Alignment.center,
+                child: TextField(
+                  controller: priceTextController,
+                  onChanged: (value) =>
+                      priceController.value = double.tryParse(value) ?? 0.0,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  decoration: InputDecoration(
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    hintStyle: const TextStyle(color: Colors.black),
+                    suffixIcon: IconButton(
+                      onPressed: () => priceController.value = 0.0,
+                      icon: const Icon(Icons.cancel_sharp),
+                    ),
                   ),
                 ),
               ),

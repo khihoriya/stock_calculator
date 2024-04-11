@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MultiStockCalculatorController extends GetxController {
@@ -15,6 +16,8 @@ class MultiStockCalculatorController extends GetxController {
 
   var totalShares = 0.obs;
   var totalCost = 0.0.obs;
+  TextEditingController qtyTextController = TextEditingController();
+
 
   void calculateTotalSharesAndCost() {
     totalShares.value = qty1.value + qty2.value + qty3.value + qty4.value + qty5.value;

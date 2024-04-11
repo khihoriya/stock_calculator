@@ -21,11 +21,11 @@ class drawer extends StatefulWidget {
 
 class _drawerState extends State<drawer> {
   List page = [
-    HomePage(),
+    const HomePage(),
     const MultiStockCalculatorView(),
     ProfitCalculatorView(),
-    LossCalculaotView(),
-    SettingsScreenView()
+    const LossCalculaotView(),
+    const SettingsScreenView()
   ];
   int index = 0;
 

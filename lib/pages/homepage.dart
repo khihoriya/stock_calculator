@@ -3,9 +3,12 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:provider/provider.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
 import 'package:vibration/vibration.dart';
+
+import '../themes/dark_theme_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -57,6 +60,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -122,7 +126,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
                           child: TextField(
-
+                            cursorColor: AppColors.primary,
+                            style: const TextStyle(color:AppColors.labelColorLightPrimary),
                             keyboardType: TextInputType.number,
                             controller: originalshareqty,
                             decoration: InputDecoration(
@@ -144,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                 ],
               ),
             ),
@@ -166,6 +171,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
                           child: TextField(
+                            cursorColor: AppColors.primary,
+                            style: const TextStyle(color:AppColors.labelColorLightPrimary),
                             keyboardType: TextInputType.number,
                             controller: purchaseprice,
                             decoration: InputDecoration(
@@ -209,6 +216,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
                           child: TextField(
+                            cursorColor: AppColors.primary,
+                            style: const TextStyle(color:AppColors.labelColorLightPrimary),
                             controller: newshareqty,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
@@ -252,6 +261,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
                           child: TextField(
+                            cursorColor: AppColors.primary,
+                            style: const TextStyle(color:AppColors.labelColorLightPrimary),
                             controller: newpurchaseprice,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
