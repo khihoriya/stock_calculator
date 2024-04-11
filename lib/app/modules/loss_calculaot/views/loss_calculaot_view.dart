@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vibration/vibration.dart';
 import '../../../../themes/app_colors.dart';
 import '../../../../themes/app_them_data.dart';
 import '../controllers/loss_calculaot_controller.dart';
@@ -320,6 +321,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                   child: InkWell(
                     onTap: () {
                       controller.calculate();
+                      Vibration.vibrate(duration: 1);
                     },
                     child: Container(
                       height: screenHeight * 0.05,
@@ -343,6 +345,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                   child: InkWell(
                     onTap: () {
                       controller.reset();
+                      Vibration.vibrate(duration: 1);
                     },
                     child: Container(
                       height: screenHeight * 0.05,

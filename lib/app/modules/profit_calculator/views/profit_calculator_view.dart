@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
+import 'package:vibration/vibration.dart';
 
 class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
   ProfitCalculatorView({Key? key}) : super(key: key);
@@ -187,22 +188,22 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                           ),
                         ),
                       ),
-                      // Obx(() => Radio(
-                      //       value: 0,
-                      //       groupValue: controller.buyRadioValue.value,
-                      //       onChanged: (value) {
-                      //         controller.updateRadioValue(value!);
-                      //       },
-                      //     )),
-                      // Text('%'),
-                      // Obx(() => Radio(
-                      //       value: 1,
-                      //       groupValue: controller.buyRadioValue.value,
-                      //       onChanged: (value) {
-                      //         controller.updateRadioValue(value);
-                      //       },
-                      //     )),
-                      // Text('₹'),
+                       Radio(
+                            value: 0,
+                            groupValue: "",
+                            onChanged: (value) {
+
+                            },
+                          ),
+                      Text('%'),
+                       Radio(
+                            value: 1,
+                            groupValue: "",
+                            onChanged: (value) {
+
+                            },
+                          ),
+                      Text('₹'),
                     ],
                   ),
                 ),
@@ -246,6 +247,22 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                           ),
                         ),
                       ),
+                      Radio(
+                        value: 0,
+                        groupValue: "",
+                        onChanged: (value) {
+
+                        },
+                      ),
+                      Text('%'),
+                      Radio(
+                        value: 1,
+                        groupValue: "",
+                        onChanged: (value) {
+
+                        },
+                      ),
+                      Text('₹'),
                     ],
                   ),
                 ),
@@ -289,6 +306,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                                   sellcommisioonnn: sellcommisioonnn,
                                   profitpercentageeee: profitecalculateeee,
                                   losspercentageeee: losscalculateeee);
+                              Vibration.vibrate(duration: 1);
                             }
                           },
                           child: Container(
@@ -319,6 +337,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             buycomission.clear();
                             sellcomission.clear();
                             controller.resetValues();
+                            Vibration.vibrate(duration: 1);
                           },
                           child: Container(
                             height: screenHeight * 0.05,

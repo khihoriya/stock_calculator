@@ -69,7 +69,7 @@ class IntroScreenView extends GetView<IntroScreenController> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        height: 400,
+                        height: 200,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(image: DecorationImage(image: AssetImage("${introScreenModel.image}"))),
                       ),

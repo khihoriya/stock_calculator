@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
+import 'package:vibration/vibration.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -121,6 +122,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12)),
                           child: TextField(
+
                             keyboardType: TextInputType.number,
                             controller: originalshareqty,
                             decoration: InputDecoration(
@@ -262,6 +264,7 @@ class _HomePageState extends State<HomePage> {
                                     fontFamily: AppThemData.medium),
                                 suffixIcon: IconButton(
                                     onPressed: () {
+                                      newpurchaseprice.clear();
                                       setState(() {});
                                     },
                                     icon: const Icon(Icons.cancel_sharp))),
@@ -376,6 +379,7 @@ class _HomePageState extends State<HomePage> {
                                   int.parse(newpurchasepricee));
                           averageprice.value =
                               totalcost.value / totalshare.value;
+                          Vibration.vibrate(duration: 1);
                         }
                       },
                       child: Container(
@@ -408,6 +412,7 @@ class _HomePageState extends State<HomePage> {
                         totalshare.value = 0;
                         totalcost.value = 0;
                         averageprice.value = 0;
+                        Vibration.vibrate(duration: 1);
                       },
                       child: Container(
                         height: screenHeight * 0.05,

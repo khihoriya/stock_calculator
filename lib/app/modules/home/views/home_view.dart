@@ -63,13 +63,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "Original share quantity",
-                    style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
-                  ),
-                ],
+              child: Text(
+                "Original share quantity",
+                style: TextStyle(fontWeight: FontWeight.bold,fontFamily: AppThemData.bold),
               ),
             ),
             Padding(

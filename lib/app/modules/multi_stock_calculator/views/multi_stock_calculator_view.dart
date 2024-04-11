@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stock_calculator/app/modules/multi_stock_calculator/controllers/multi_stock_calculator_controller.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
+import 'package:vibration/vibration.dart';
 
 class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
   const MultiStockCalculatorView({Key? key}) : super(key: key);
@@ -101,6 +102,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                       child: GestureDetector(
                         onTap: () {
                           controller.calculateTotalSharesAndCost();
+                          Vibration.vibrate(duration: 1);
                         },
                         child: Container(
                           height: screenHeight * 0.05,
@@ -137,6 +139,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                           controller.price3.value = 0.0;
                           controller.price4.value = 0.0;
                           controller.price5.value = 0.0;
+                          Vibration.vibrate(duration: 1);
                         },
                         child: Container(
                           height: screenHeight * 0.05,
