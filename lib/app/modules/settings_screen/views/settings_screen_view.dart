@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stock_calculator/preferences.dart';
 import 'package:stock_calculator/themes/dark_theme_provider.dart';
@@ -21,16 +22,36 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
       init: SettingsScreenController(),
       builder: (controller) {
         return Scaffold(
-          backgroundColor: Theme.of(context)
-              .colorScheme
-              .background, // Set initial background color based on theme mode
+          backgroundColor: Theme.of(context).colorScheme.background, // Set initial background color based on theme mode
           body: Column(
             children: [
               menuItemWidget(
                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
-                  final Uri url = Uri.parse("");
+                  Constant().launchEmailSupport();
+                },
+                title: "Rate Us".tr,
+                svgImage: "assets/icons/ic_rateus.svg",
+              ),
+              const Divider(height: 0, color: AppColors.lightGrey05),
+              menuItemWidget(
+                  color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                  context: context,
+                  onTap: () {
+                    Share.share(
+                        "Stock price calculator\n it is use for effortlessly calculating stocks,\ndownload Now:-https://play.google.com/store/apps/details?id=com.sis.stockpricecalculator&hl=en&gl=US");
+                  },
+                  title: "Share".tr,
+                  svgImage: "assets/icons/ic_share.svg",
+                  isHighlighted: true),
+              const Divider(height: 0, color: AppColors.lightGrey05),
+              menuItemWidget(
+                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                context: context,
+                onTap: () async {
+                  final Uri url = Uri.parse(
+                      "https://doc-hosting.flycricket.io/stock-price-calculator-privacy-policy/e8ffd27f-ea74-4770-82bb-6df763444313/privacy");
                   if (!await launchUrl(url)) {
                     throw Exception('Could not launch ${''}'.tr);
                   }
@@ -43,23 +64,14 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
-                  final Uri url = Uri.parse('');
+                  final Uri url = Uri.parse(
+                      'https://doc-hosting.flycricket.io/stock-price-calculator-terms-of-use/fa47aa5d-eef0-4491-b875-3926eae34be1/terms');
                   if (!await launchUrl(url)) {
                     throw Exception('Could not launch ${''}'.tr);
                   }
                 },
                 title: "Terms & Conditions".tr,
                 svgImage: "assets/icons/ic_note.svg",
-              ),
-              const Divider(height: 0, color: AppColors.lightGrey05),
-              menuItemWidget(
-                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
-                context: context,
-                onTap: () async {
-                  Constant().launchEmailSupport();
-                },
-                title: "Support".tr,
-                svgImage: "assets/icons/ic_call.svg",
               ),
               const Divider(height: 0, color: AppColors.lightGrey05),
               menuItemWidget(
@@ -136,9 +148,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
           trailing: const Icon(Icons.arrow_forward_ios, size: 18),
           leading: SvgPicture.asset(
             svgImage,
-            color: title == "Log Out" || title.tr == "Delete Account".tr
-                ? AppColors.red04
-                : AppColors.darkGrey05,
+            color: title == "Log Out" || title.tr == "Delete Account".tr ? AppColors.red04 : AppColors.darkGrey05,
             height: 26,
           ),
           title: Row(

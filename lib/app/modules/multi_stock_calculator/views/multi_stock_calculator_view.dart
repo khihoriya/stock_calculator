@@ -208,6 +208,7 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
                 keyboardType: TextInputType.number,
                 style: const TextStyle(fontFamily: AppThemData.semiBold),
                 decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
                   filled: true,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12)),
@@ -231,18 +232,20 @@ class MultiStockCalculatorView extends GetView<MultiStockCalculatorController> {
           Expanded(
             child: AnimatedContainer(
               duration: const Duration(seconds: 2),
-              height: 45, // Adjust the height here
+              height: 42, // Adjust the height here
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Align(alignment: Alignment.center,
                 child: TextField(
+                  style: const TextStyle(fontFamily: AppThemData.semiBold),
                   controller: priceTextController,
                   onChanged: (value) =>
                       priceController.value = double.tryParse(value) ?? 0.0,
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12)),

@@ -42,6 +42,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
                         child: TextField(
+                          cursorColor: AppColors.primary,
+                          style: const TextStyle(color:AppColors.labelColorLightPrimary),
                           controller: controller.shareQuantityController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
@@ -83,6 +85,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
                         child: TextField(
+                          cursorColor: AppColors.primary,
+                          style: const TextStyle(color:AppColors.labelColorLightPrimary),
                           controller: controller.purchasePriceController,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
@@ -124,6 +128,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
                         child: TextField(
+                          cursorColor: AppColors.primary,
+                          style: const TextStyle(color:AppColors.labelColorLightPrimary),
                           controller: controller.currentPriceController,
                           onChanged: (value) {
                             controller.calculateLossPercentage();
@@ -168,6 +174,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
                         child: TextField(
+                          cursorColor: AppColors.primary,
+                          style: const TextStyle(color:AppColors.labelColorLightPrimary),
                           controller:
                               controller.currentLossPercentageController,
                           onChanged: (value) {
@@ -213,6 +221,8 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12)),
                         child: TextField(
+                          cursorColor: AppColors.primary,
+                          style: const TextStyle(color:AppColors.labelColorLightPrimary),
                           controller:
                               controller.recoverLossPercentageController,
                           decoration: InputDecoration(
@@ -234,7 +244,7 @@ class LossCalculaotView extends GetView<LossCalculaotController> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
               ],
             ),
           ),

@@ -15,6 +15,7 @@ dependencies:
   shared_preferences: ^2.2.1
   url_launcher: ^6.0.6
   vibration:
+  share_plus: ^8.0.3
 
 
 

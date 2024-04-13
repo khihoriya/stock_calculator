@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
+import 'package:stock_calculator/themes/dark_theme_provider.dart';
 import 'package:vibration/vibration.dart';
 
 class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
@@ -12,12 +16,14 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
   TextEditingController sellprice = TextEditingController();
   TextEditingController buycomission = TextEditingController(text: "20");
   TextEditingController sellcomission = TextEditingController(text: "20");
+  int? selectedRadioValue;
+  int? selectedRadioValue1;
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return GetBuilder(
       init: ProfitCalculatorController(),
       builder: (controller) {
@@ -32,25 +38,32 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     children: [
                       const Text(
                         "Share quantity",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppThemData.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
                       const SizedBox(width: 15),
                       Expanded(
-                        child: AnimatedContainer(
-                          duration: Duration(seconds: 2),
+                        child: Container(
+                          // duration: const Duration(seconds: 2),
                           height: 40,
-                          color: AppColors.white,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: TextField(
+                            cursorColor: AppColors.primary,
                             controller: sharequntity,
                             keyboardType: TextInputType.number,
-                            style: TextStyle(fontFamily: AppThemData.semiBold),
+                            style: const TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                              // Adjust padding to center vertically
+
                               filled: true,
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              hintStyle: TextStyle(color: Colors.black),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              hintStyle: const TextStyle(color: Colors.black),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   sharequntity.clear();
@@ -71,9 +84,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     children: [
                       const Text(
                         "Purchase Price",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppThemData.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
                       const SizedBox(width: 15),
                       Expanded(
@@ -85,13 +96,15 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
+                            cursorColor: AppColors.primary,
                             controller: purchaseprice,
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               filled: true,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                               hintStyle: TextStyle(color: Colors.black),
                               suffixIcon: IconButton(
                                 onPressed: () {
@@ -106,7 +119,6 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -114,9 +126,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     children: [
                       const Text(
                         "Sell Price",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppThemData.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
                       SizedBox(width: 52),
                       Expanded(
@@ -128,13 +138,15 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
+                            cursorColor: AppColors.primary,
                             controller: sellprice,
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               filled: true,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                               hintStyle: TextStyle(color: Colors.black),
                               suffixIcon: IconButton(
                                 onPressed: () {
@@ -149,7 +161,6 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -169,41 +180,50 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
+                            cursorColor: AppColors.primary,
                             controller: buycomission,
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+
+                              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               hintText: "₹",
                               filled: true,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              hintStyle: TextStyle(color: Colors.black),
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                              hintStyle: TextStyle(
+                                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                              ),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   buycomission.clear();
                                 },
-                                icon: Icon(Icons.cancel_sharp),
+                                icon: const Icon(Icons.cancel_sharp),
                               ),
                             ),
                           ),
                         ),
                       ),
-                       Radio(
-                            value: 0,
-                            groupValue: "",
-                            onChanged: (value) {
-
-                            },
-                          ),
-                      Text('%'),
-                       Radio(
-                            value: 1,
-                            groupValue: "",
-                            onChanged: (value) {
-
-                            },
-                          ),
-                      Text('₹'),
+                      // Radio(
+                      //   activeColor: AppColors.primary,
+                      //   value: 0, // value for '%'
+                      //   groupValue: selectedRadioValue,
+                      //   onChanged: (value) {
+                      //     selectedRadioValue = value as int?;
+                      //     controller.update();
+                      //   },
+                      // ),
+                      // const Text('%'),
+                      // Radio(
+                      //   activeColor: AppColors.primary,
+                      //   value: 1, // value for '₹'
+                      //   groupValue: selectedRadioValue,
+                      //   onChanged: (value) {
+                      //     selectedRadioValue = value as int?;
+                      //     controller.update();
+                      //   },
+                      // ),
+                      // const Text('₹'),
                     ],
                   ),
                 ),
@@ -214,11 +234,9 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                     children: [
                       const Text(
                         "Sell Commission",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppThemData.bold),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: AnimatedContainer(
                           duration: Duration(seconds: 2),
@@ -228,15 +246,19 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
+
                             controller: sellcomission,
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               hintText: '₹',
                               filled: true,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              hintStyle: TextStyle(color: Colors.black),
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                              hintStyle: TextStyle(
+                                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                              ),
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   sellcomission.clear();
@@ -247,26 +269,29 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                           ),
                         ),
                       ),
-                      Radio(
-                        value: 0,
-                        groupValue: "",
-                        onChanged: (value) {
-
-                        },
-                      ),
-                      Text('%'),
-                      Radio(
-                        value: 1,
-                        groupValue: "",
-                        onChanged: (value) {
-
-                        },
-                      ),
-                      Text('₹'),
+                      // Radio(
+                      //   activeColor: AppColors.primary,
+                      //   value: 0, // value for '%'
+                      //   groupValue: selectedRadioValue1,
+                      //   onChanged: (value) {
+                      //     selectedRadioValue1 = value as int?;
+                      //     controller.update();
+                      //   },
+                      // ),
+                      // const Text('%'),
+                      // Radio(
+                      //   activeColor: AppColors.primary,
+                      //   value: 1, // value for '₹'
+                      //   groupValue: selectedRadioValue1,
+                      //   onChanged: (value) {
+                      //     selectedRadioValue1 = value as int?;
+                      //     controller.update();
+                      //   },
+                      // ),
+                      // const Text('₹'),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Row(
@@ -284,19 +309,14 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             String losscalculateeee = "";
 
                             if (sharequntity.text.isEmpty) {
-                              ScaffoldMessenger.maybeOf(context)!.showSnackBar(
-                                  SnackBar(
-                                      content: Text("Please enter share qty")));
+                              ScaffoldMessenger.maybeOf(context)!
+                                  .showSnackBar(SnackBar(content: Text("Please enter share qty")));
                             } else if (purchaseprice.text.isEmpty) {
-                              ScaffoldMessenger.maybeOf(context)!.showSnackBar(
-                                  SnackBar(
-                                      content:
-                                          Text("Please enter purchase price")));
+                              ScaffoldMessenger.maybeOf(context)!
+                                  .showSnackBar(SnackBar(content: Text("Please enter purchase price")));
                             } else if (sellprice.text.isEmpty) {
-                              ScaffoldMessenger.maybeOf(context)!.showSnackBar(
-                                  const SnackBar(
-                                      content:
-                                          Text("Please enter sell price")));
+                              ScaffoldMessenger.maybeOf(context)!
+                                  .showSnackBar(const SnackBar(content: Text("Please enter sell price")));
                             } else {
                               controller.calculate(
                                   shareqtyyy: shareqtyyy,
@@ -312,16 +332,12 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                           child: Container(
                             height: screenHeight * 0.05,
                             width: screenWidth * 0.4,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: Colors.teal),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.teal),
                             child: const Center(
                               child: Text(
                                 "Calculate",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontFamily: AppThemData.bold),
+                                    fontWeight: FontWeight.bold, color: Colors.white, fontFamily: AppThemData.bold),
                               ),
                             ),
                           ),
@@ -350,9 +366,7 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                               child: Text(
                                 "Reset",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontFamily: AppThemData.bold),
+                                    fontWeight: FontWeight.bold, color: Colors.white, fontFamily: AppThemData.bold),
                               ),
                             ),
                           ),
@@ -370,16 +384,12 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                         children: [
                           const Text(
                             "Net Buy Price ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: AppThemData.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                           ),
                           Text(
                             "RS = ${controller.buyprice}",
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                                fontFamily: AppThemData.bold),
+                                fontWeight: FontWeight.bold, color: Colors.green, fontFamily: AppThemData.bold),
                           ),
                         ],
                       ),
@@ -391,16 +401,12 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                         children: [
                           const Text(
                             "Net Sell Price ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: AppThemData.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontFamily: AppThemData.bold),
                           ),
                           Text(
                             "RS = ${controller.sellpricee}",
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                                fontFamily: AppThemData.bold),
+                                fontWeight: FontWeight.bold, color: Colors.green, fontFamily: AppThemData.bold),
                           ),
                         ],
                       ),
@@ -415,16 +421,12 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                           const Text(
                             "PROFIT ",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                                fontFamily: AppThemData.bold),
+                                fontWeight: FontWeight.bold, color: Colors.green, fontFamily: AppThemData.bold),
                           ),
                           Text(
                             "RS = +${controller.profit}  (% ${controller.profitpercentage.toStringAsFixed(2)})",
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green,
-                                fontFamily: AppThemData.bold),
+                                fontWeight: FontWeight.bold, color: Colors.green, fontFamily: AppThemData.bold),
                           ),
                         ],
                       ),
@@ -437,17 +439,13 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                         children: [
                           const Text(
                             "LOSS ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.red,
-                                fontFamily: AppThemData.bold),
+                            style:
+                                TextStyle(fontWeight: FontWeight.bold, color: Colors.red, fontFamily: AppThemData.bold),
                           ),
                           Text(
                             "RS = ${controller.loss}  (% ${controller.losspercentage.toStringAsFixed(2)})",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.red,
-                                fontFamily: AppThemData.bold),
+                            style:
+                                TextStyle(fontWeight: FontWeight.bold, color: Colors.red, fontFamily: AppThemData.bold),
                           ),
                         ],
                       ),
@@ -482,15 +480,12 @@ class ProfitCalculatorController extends GetxController {
     required String profitpercentageeee,
     required String losspercentageeee,
   }) {
-    buyprice.value = (int.parse(shareqtyyy) * int.parse(purchasepricee)) -
-        int.parse(buycommisioonnn);
-    sellpricee.value = (int.parse(shareqtyyy) * int.parse(sellpriceee)) -
-        int.parse(sellcommisioonnn);
+    buyprice.value = (int.parse(shareqtyyy) * int.parse(purchasepricee)) - int.parse(buycommisioonnn);
+    sellpricee.value = (int.parse(shareqtyyy) * int.parse(sellpriceee)) - int.parse(sellcommisioonnn);
 
     if (sellpricee.value > buyprice.value) {
       profit.value = sellpricee.value - buyprice.value;
       profitpercentage.value = ((profit.value / buyprice.value) * 100).round();
-
       profitvalue.value = true;
       lossvalue.value = false;
     } else {

@@ -14,6 +14,9 @@ class MultiStockCalculatorController extends GetxController {
   var price4 = 0.0.obs;
   var price5 = 0.0.obs;
 
+
+
+
   var totalShares = 0.obs;
   var totalCost = 0.0.obs;
   TextEditingController qtyTextController = TextEditingController();

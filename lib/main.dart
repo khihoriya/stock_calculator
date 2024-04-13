@@ -9,7 +9,7 @@ import 'package:stock_calculator/themes/styles.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
-
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.initPref();
   runApp(const MyApp());
