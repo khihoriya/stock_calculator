@@ -14,8 +14,8 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
   TextEditingController sharequntity = TextEditingController();
   TextEditingController purchaseprice = TextEditingController();
   TextEditingController sellprice = TextEditingController();
-  TextEditingController buycomission = TextEditingController(text: "20");
-  TextEditingController sellcomission = TextEditingController(text: "20");
+  TextEditingController buycomission = TextEditingController();
+  TextEditingController sellcomission = TextEditingController();
   int? selectedRadioValue;
   int? selectedRadioValue1;
 
@@ -55,7 +55,9 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: const TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
-                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(8))),
                               contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               // Adjust padding to center vertically
 
@@ -101,7 +103,9 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
-                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(8))),
                               contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               filled: true,
                               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -143,7 +147,9 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
-                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(8))),
                               contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               filled: true,
                               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
@@ -185,11 +191,12 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
-
                               contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               hintText: "₹",
                               filled: true,
-                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(8))),
                               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                               hintStyle: TextStyle(
                                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
@@ -246,12 +253,13 @@ class ProfitCalculatorView extends GetView<ProfitCalculatorController> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
-
                             controller: sellcomission,
                             keyboardType: TextInputType.number,
                             style: TextStyle(fontFamily: AppThemData.semiBold),
                             decoration: InputDecoration(
-                              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColors.primary,width: 2),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(8))),
                               contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                               hintText: '₹',
                               filled: true,

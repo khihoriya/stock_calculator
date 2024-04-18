@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:stock_calculator/lenguage_pages/lenguage_screen_controller.dart';
+import 'package:stock_calculator/main_controller.dart';
 import 'package:stock_calculator/preferences.dart';
 import 'package:stock_calculator/themes/dark_theme_provider.dart';
 import 'package:stock_calculator/themes/styles.dart';
@@ -50,6 +52,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       },
       child: Consumer<DarkThemeProvider>(
         builder: (context, value, child) {
+          Get.put(LanguageScreenController());
+          Get.put(MainPageController());
           return GetMaterialApp(
             title: "Application",
             initialRoute: AppPages.INITIAL,

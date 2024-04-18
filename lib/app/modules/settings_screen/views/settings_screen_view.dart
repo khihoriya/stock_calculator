@@ -4,10 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stock_calculator/lenguage_pages/lenguage_screen.dart';
 import 'package:stock_calculator/preferences.dart';
 import 'package:stock_calculator/themes/dark_theme_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:stock_calculator/constant/constant.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
 import '../controllers/settings_screen_controller.dart';
@@ -25,16 +25,14 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
           backgroundColor: Theme.of(context).colorScheme.background, // Set initial background color based on theme mode
           body: Column(
             children: [
-              menuItemWidget(
+                menuItemWidget(
                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
-                onTap: () async {
-                  Constant().launchEmailSupport();
-                },
+                onTap: () async {},
                 title: "Rate Us".tr,
                 svgImage: "assets/icons/ic_rateus.svg",
               ),
-              const Divider(height: 0, color: AppColors.lightGrey05),
+              Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08 ),
               menuItemWidget(
                   color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                   context: context,
@@ -45,7 +43,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   title: "Share".tr,
                   svgImage: "assets/icons/ic_share.svg",
                   isHighlighted: true),
-              const Divider(height: 0, color: AppColors.lightGrey05),
+               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
               menuItemWidget(
                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
@@ -59,7 +57,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Privacy Policy".tr,
                 svgImage: "assets/icons/ic_privacy.svg",
               ),
-              const Divider(height: 0, color: AppColors.lightGrey05),
+               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
               menuItemWidget(
                 color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                 context: context,
@@ -73,7 +71,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Terms & Conditions".tr,
                 svgImage: "assets/icons/ic_note.svg",
               ),
-              const Divider(height: 0, color: AppColors.lightGrey05),
+               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
               menuItemWidget(
                   color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
                   context: context,
@@ -88,6 +86,7 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   title: "Contact us".tr,
                   svgImage: "assets/icons/ic_contact_us.svg",
                   isHighlighted: true),
+              Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
               const SizedBox(
                 height: 15,
               ),
@@ -122,6 +121,35 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 },
                 activeColor: AppColors.green04,
               ).marginOnly(left: 10),
+              const Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Change Language',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: AppThemData.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              menuItemWidget(
+                context: context,
+                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                onTap: () {
+                  // Get.toNamed(Routes.LANGUAGE_SCREEN)?.then((value) {
+                  //   if (value == true) {
+                  //     controller.getLanguage();
+                  //   }
+                  // });
+                  Get.to(const LanguageScreen(),
+                      transition: Transition.rightToLeft);
+                },
+                title: "Language".tr,
+                svgImage: "assets/icons/ic_language.svg",
+              ),
             ],
           ),
         );

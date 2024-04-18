@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:stock_calculator/app/modules/multi_stock_calculator/views/multi_stock_calculator_view.dart';
 import 'package:stock_calculator/app/modules/profit_calculator/views/profit_calculator_view.dart';
@@ -44,8 +45,10 @@ class _drawerState extends State<drawer> {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Color(0xff024854),
-          title: Text('$appbartitle',
-              style: const TextStyle(fontFamily: AppThemData.bold,color: Colors.white),),
+          title: Text(
+            '$appbartitle',
+            style: const TextStyle(fontFamily: AppThemData.bold, color: Colors.white),
+          ),
         ),
         drawer: Drawer(
           child: ListView(
@@ -129,14 +132,14 @@ class _drawerState extends State<drawer> {
                   'assets/icons/ic_setting.svg',
                   height: 26,
                 ),
-                title: const Text(
-                  'settings',
+                title: Text(
+                  'setting'.tr,
                   style: TextStyle(fontFamily: AppThemData.bold),
                 ),
                 onTap: () {
                   setState(() {
                     index = 4;
-                    appbartitle = "settings";
+                    appbartitle = "setting".tr;
                   });
                   Navigator.pop(context);
                 },
