@@ -16,8 +16,6 @@ dependencies:
   url_launcher: ^6.0.6
   vibration:
   share_plus:
-  google_mobile_ads: ^5.1.0
-
 
 
 

@@ -1,35 +1,12 @@
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class HomeController extends GetxController {
-  final BannerAd myBanner = BannerAd(
-    adUnitId: "ca-app-pub-3940256099942544/6300978111",
-    size: AdSize.banner,
-    request: const AdRequest(),
-    listener: const BannerAdListener(),
-  );
-  RxBool isInterstitialLoaded = false.obs;
-  InterstitialAd? interstitialAd;
+  //TODO: Implement HomeController
+
+  final count = 0.obs;
   @override
   void onInit() {
-    _loadInterstitialAd();
     super.onInit();
-  }
-
-  Future<void> _loadInterstitialAd() async {
-    InterstitialAd.load(
-        adUnitId: "ca-app-pub-3940256099942544/1033173712",
-        request: const AdRequest(),
-        adLoadCallback: InterstitialAdLoadCallback(
-          onAdLoaded: (ad) {
-            interstitialAd = ad;
-            isInterstitialLoaded.value = true;
-            _loadInterstitialAd();
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            interstitialAd!.dispose();
-          },
-        ));
   }
 
   @override
@@ -42,5 +19,5 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-// void increment() => count.value++;
+  void increment() => count.value++;
 }

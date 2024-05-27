@@ -11,7 +11,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:stock_calculator/themes/app_colors.dart';
 import 'package:stock_calculator/themes/app_them_data.dart';
 import '../controllers/settings_screen_controller.dart';
-
 class SettingsScreenView extends GetView<SettingsScreenController> {
   const SettingsScreenView({Key? key}) : super(key: key);
 
@@ -159,37 +158,37 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 },
                 activeColor: AppColors.green04,
               ).marginOnly(left: 10),
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Change Language',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: AppThemData.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              menuItemWidget(
-                context: context,
-                color: themeChange.getThem()
-                    ? AppColors.gallery200
-                    : AppColors.darkGrey08,
-                onTap: () {
-                  // Get.toNamed(Routes.LANGUAGE_SCREEN)?.then((value) {
-                  //   if (value == true) {
-                  //     controller.getLanguage();
-                  //   }
-                  // });
-                  Get.to(const LanguageScreen(),
-                      transition: Transition.rightToLeft);
-                },
-                title: "Language".tr,
-                svgImage: "assets/icons/ic_language.svg",
-              ),
+              // const Row(
+              //   children: [
+              //     Padding(
+              //       padding: EdgeInsets.all(8.0),
+              //       child: Text(
+              //         'Change Language',
+              //         style: TextStyle(
+              //           fontSize: 18,
+              //           fontFamily: AppThemData.bold,
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // menuItemWidget(
+              //   context: context,
+              //   color: themeChange.getThem()
+              //       ? AppColors.gallery200
+              //       : AppColors.darkGrey08,
+              //   onTap: () {
+              //     // Get.toNamed(Routes.LANGUAGE_SCREEN)?.then((value) {
+              //     //   if (value == true) {
+              //     //     controller.getLanguage();
+              //     //   }
+              //     // });
+              //     Get.to(const LanguageScreen(),
+              //         transition: Transition.rightToLeft);
+              //   },
+              //   title: "Language".tr,
+              //   svgImage: "assets/icons/ic_language.svg",
+              // ),
             ],
           ),
         );
