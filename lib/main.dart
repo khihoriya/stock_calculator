@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_calculator/lenguage_pages/lenguage_screen_controller.dart';
 import 'package:stock_calculator/main_controller.dart';
@@ -11,9 +12,10 @@ import 'package:stock_calculator/themes/styles.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
-  
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.initPref();
+  MobileAds.instance.initialize();
+
   runApp(const MyApp());
   //Get.put(MultiStockCalculatorController());
 }

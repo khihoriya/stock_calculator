@@ -22,30 +22,48 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
       init: SettingsScreenController(),
       builder: (controller) {
         return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.background, // Set initial background color based on theme mode
+          backgroundColor: Theme.of(context)
+              .colorScheme
+              .background, // Set initial background color based on theme mode
           body: Column(
             children: [
-                menuItemWidget(
-                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+              menuItemWidget(
+                color: themeChange.getThem()
+                    ? AppColors.gallery200
+                    : AppColors.darkGrey08,
                 context: context,
-                onTap: () async {},
+                onTap: () async {
+                  controller.openGooglePlayStore();
+                },
                 title: "Rate Us".tr,
                 svgImage: "assets/icons/ic_rateus.svg",
               ),
-              Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08 ),
+              Divider(
+                  height: 0,
+                  color: themeChange.getThem()
+                      ? AppColors.lightGrey05
+                      : AppColors.darkGrey08),
               menuItemWidget(
-                  color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                  color: themeChange.getThem()
+                      ? AppColors.gallery200
+                      : AppColors.darkGrey08,
                   context: context,
                   onTap: () {
                     Share.share(
-                        "Stock price calculator\n it is use for effortlessly calculating stocks,\ndownload Now:-https://play.google.com/store/apps/details?id=com.sis.stockpricecalculator&hl=en&gl=US");
+                        "Stock price calculator\n it is use for effortlessly calculating stocks,\ndownload Now:-https://play.google.com/store/apps/details?id=com.stock.stock_calculator");
                   },
                   title: "Share".tr,
                   svgImage: "assets/icons/ic_share.svg",
                   isHighlighted: true),
-               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
+              Divider(
+                  height: 0,
+                  color: themeChange.getThem()
+                      ? AppColors.lightGrey05
+                      : AppColors.darkGrey08),
               menuItemWidget(
-                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                color: themeChange.getThem()
+                    ? AppColors.gallery200
+                    : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
                   final Uri url = Uri.parse(
@@ -57,9 +75,15 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Privacy Policy".tr,
                 svgImage: "assets/icons/ic_privacy.svg",
               ),
-               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
+              Divider(
+                  height: 0,
+                  color: themeChange.getThem()
+                      ? AppColors.lightGrey05
+                      : AppColors.darkGrey08),
               menuItemWidget(
-                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                color: themeChange.getThem()
+                    ? AppColors.gallery200
+                    : AppColors.darkGrey08,
                 context: context,
                 onTap: () async {
                   final Uri url = Uri.parse(
@@ -71,14 +95,21 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                 title: "Terms & Conditions".tr,
                 svgImage: "assets/icons/ic_note.svg",
               ),
-               Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
+              Divider(
+                  height: 0,
+                  color: themeChange.getThem()
+                      ? AppColors.lightGrey05
+                      : AppColors.darkGrey08),
               menuItemWidget(
-                  color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                  color: themeChange.getThem()
+                      ? AppColors.gallery200
+                      : AppColors.darkGrey08,
                   context: context,
                   onTap: () {
                     final Uri emailLaunchUri = Uri(
                       scheme: 'mailto',
-                      path: 'gopinathitech@gmail.com', // Replace with your email address
+                      path:
+                          'gopinathitech@gmail.com', // Replace with your email address
                     );
 
                     launch(emailLaunchUri.toString());
@@ -86,7 +117,11 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   title: "Contact us".tr,
                   svgImage: "assets/icons/ic_contact_us.svg",
                   isHighlighted: true),
-              Divider(height: 0, color: themeChange.getThem() ? AppColors.lightGrey05 : AppColors.darkGrey08),
+              Divider(
+                  height: 0,
+                  color: themeChange.getThem()
+                      ? AppColors.lightGrey05
+                      : AppColors.darkGrey08),
               const SizedBox(
                 height: 15,
               ),
@@ -110,12 +145,15 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: AppThemData.bold,
-                    color: themeChange.getThem() ? AppColors.gallery200 : AppColors.gallery800,
+                    color: themeChange.getThem()
+                        ? AppColors.gallery200
+                        : AppColors.gallery800,
                   ),
                 ),
                 value: themeChange.darkTheme == 0,
                 onChanged: (value) {
-                  themeChange.darkTheme = value ? 0 : 1; // 0 for Dark, 1 for Light
+                  themeChange.darkTheme =
+                      value ? 0 : 1; // 0 for Dark, 1 for Light
                   String themeMode = value ? "Dark" : "Light";
                   Preferences.setString(Preferences.themKey, themeMode);
                 },
@@ -137,7 +175,9 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
               ),
               menuItemWidget(
                 context: context,
-                color: themeChange.getThem() ? AppColors.gallery200 : AppColors.darkGrey08,
+                color: themeChange.getThem()
+                    ? AppColors.gallery200
+                    : AppColors.darkGrey08,
                 onTap: () {
                   // Get.toNamed(Routes.LANGUAGE_SCREEN)?.then((value) {
                   //   if (value == true) {
@@ -176,7 +216,9 @@ class SettingsScreenView extends GetView<SettingsScreenController> {
           trailing: const Icon(Icons.arrow_forward_ios, size: 18),
           leading: SvgPicture.asset(
             svgImage,
-            color: title == "Log Out" || title.tr == "Delete Account".tr ? AppColors.red04 : AppColors.darkGrey05,
+            color: title == "Log Out" || title.tr == "Delete Account".tr
+                ? AppColors.red04
+                : AppColors.darkGrey05,
             height: 26,
           ),
           title: Row(
